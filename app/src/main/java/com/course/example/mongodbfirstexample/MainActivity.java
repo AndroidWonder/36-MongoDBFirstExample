@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         Thread t = new Thread(task);
         t.start();
     }
-
+   
     Runnable task = new Runnable(){
         public void run(){
 
