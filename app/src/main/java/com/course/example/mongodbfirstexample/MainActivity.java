@@ -1,6 +1,5 @@
 package com.course.example.mongodbfirstexample;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -13,6 +12,9 @@ import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.*;
 import com.mongodb.client.result.DeleteResult;
 import static com.mongodb.client.model.Updates.*;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.mongodb.client.result.UpdateResult;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,13 +32,13 @@ public class MainActivity extends AppCompatActivity {
         Thread t = new Thread(task);
         t.start();
     }
-   
+
     Runnable task = new Runnable(){
         public void run(){
 
-            MongoClient mongoClient = new MongoClient("frodo.bentley.edu", 27017);
-            MongoDatabase database = mongoClient.getDatabase("world");
-            MongoCollection<Document> collection = database.getCollection("cities");
+            MongoClient mongoClient = new MongoClient("40.70.200.50", 27017);
+            MongoDatabase database = mongoClient.getDatabase("yelp");
+            MongoCollection<Document> collection = database.getCollection("rest");
 
             MongoCursor<Document> cursor = collection.find().iterator();
 
