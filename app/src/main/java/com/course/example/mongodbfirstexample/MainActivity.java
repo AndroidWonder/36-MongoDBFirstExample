@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     Runnable task = new Runnable(){
         public void run(){
 
-            MongoClient mongoClient = new MongoClient("40.70.200.50", 27017);
+            MongoClient mongoClient = new MongoClient("frodo.bentley.edu", 27017);
             MongoDatabase database = mongoClient.getDatabase("yelp");
             MongoCollection<Document> collection = database.getCollection("rest");
 
